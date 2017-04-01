@@ -19,12 +19,10 @@ e3 = Empl()
 b1 = Beacon()
 b2 = Beacon()
 b3 = Beacon()
-b4 = Beacon()
-b5 = Beacon()
 
 store = [c1.location,c2.location,e1.location,e2.location,e3.location]
 status = [c1.needsHelp,c2.needsHelp,e1.isBusy or e1.isHelping, e2.isBusy or e2.isHelping,e3.isBusy or e3.isHelping]
-rssi = [b1.rssi, b2.rssi, b3.rssi, b4.rssi, b5.rssi]
+rssi = [b1.rssi, b2.rssi, b3.rssi]
 
 def getDis(U, E):
     [x,y] = getVec(U, E)
@@ -50,8 +48,6 @@ def updateStoreFile(fileName):
     global b1
     global b2
     global b3
-    global b4
-    global b5
     
     f = open(fileName, 'r')
     for line in f:
@@ -88,7 +84,7 @@ def updateStatus():
     
 def updateRssi():
     global rssi
-    rssi = [b1.rssi, b2.rssi, b3.rssi, b4.rssi, b5.rssi]
+    rssi = [b1.rssi, b2.rssi, b3.rssi]
 
 # Track Blue Shirts
 #   Get info on each one
@@ -105,8 +101,6 @@ def main():
     global b1
     global b2
     global b3
-    global b4
-    global b5
     
     c1.setPos(-5,2)
     c2.setRandomPos()
@@ -139,7 +133,25 @@ def main():
     print store
     print status
     print rssi
-
+    
+    print""
+    
+    b1.setRssi(5,0)
+    b1.setRssi(5,1)
+    b1.setRssi(5,2)
+    b2.setRssi(5,0)
+    b2.setRssi(5,1)
+    b2.setRssi(5,2)
+    b3.setRssi(5,0)
+    b3.setRssi(5,1)
+    b3.setRssi(5,2)
+    b1.setPos(-5,5)
+    b2.setPos(1,5)
+    b3.setPos(1,-3)
+    
+    updateRssi()
+    print rssi
+    print b1.triLat(b2,b3, 0)
     
     
     
