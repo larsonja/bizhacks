@@ -11,6 +11,7 @@ class User:
     def __init__(self):
         self.location = [0,0]
         self.needsHelp = False
+        self.distances = [0,0,0,0,0]
     
     def setPos(self, x, y):
         self.location = [x,y]

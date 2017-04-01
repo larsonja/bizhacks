@@ -12,15 +12,19 @@ class Empl:
         self.location = [0,0]
         self.isHelping = False
         self.isBusy = False
+        self.distances = [0,0,0,0,0]
     
     def setPos(self, x, y):
         self.location = [x,y]
+        
+    def getPos(self):
+        return self.location
     
-    def isHelping(self):
-        self.needsHelp = True
+    def Helping(self):
+        self.isHelping = True
     
     def doneHelping(self):
-        self.needsHelp = False
+        self.isHelping = False
         
     def Busy(self):
         self.isBusy = True
