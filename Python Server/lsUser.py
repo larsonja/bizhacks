@@ -23,6 +23,6 @@ class User:
         self.needsHelp = False
         
     def setRandomPos(self):
-        x = random.uniform(-10, 10)
-        y = random.uniform(-10, 10)
+        x = round(random.uniform(-10, 10))
+        y = round(random.uniform(-10, 10))
         self.location = [x,y]

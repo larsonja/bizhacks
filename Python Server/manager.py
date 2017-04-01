@@ -109,7 +109,7 @@ def main():
     e3.setRandomPos()
     b1.setPos(10,10)
     b2.setPos(-10,-10)
-    b1.setRssi(170, 0)
+    b1.setRssi(4.912481378, 0)
     b1.setRssi(12.8062, 2)
     b2.setRssi(13, 0)
     b2.setRssi(15.6205, 2)
@@ -120,38 +120,62 @@ def main():
     updateStore()
     updateStatus()
     
-    print store
-    print status
-    print rssi
     print ""
-    print getDis(c1, e1)
-    print getVec(c1, e1)
+    print ""
+    print ""
+    
+    print "Example values of where people can be in the store: ", store
+    print "Example array showing if people are busy or not: ", status
+    print "Some possible RSSI values: ", rssi
+    print "Able to get the distance between the first and third user in the store: ", getDis(c1, e1)
+    print "Also able to express this as a directional vector: ", getVec(c1, e1)
     
     updateStoreFile('store')
     
     print ""
-    print store
-    print status
-    print rssi
+    print "Location of people in the store loaded from an external source: ", store
+    print "Is a person busy (also loaded externally)? ", status
+    print "Reset RSSI values for everyone: ", rssi
     
-    print""
+    print ""
+    print ""
+    print ""
+    print ""
+    print ""
     
     b1.setRssi(5,0)
-    b1.setRssi(5,1)
-    b1.setRssi(5,2)
+    b1.setRssi(math.sqrt(146),1)
+    b1.setRssi(9*math.sqrt(2),2)
     b2.setRssi(5,0)
-    b2.setRssi(5,1)
-    b2.setRssi(5,2)
+    b2.setRssi(5*math.sqrt(2),1)
+    b2.setRssi(3*math.sqrt(10),2)
     b3.setRssi(5,0)
-    b3.setRssi(5,1)
-    b3.setRssi(5,2)
+    b3.setRssi(math.sqrt(34),1)
+    b3.setRssi(math.sqrt(10),2)
     b1.setPos(-5,5)
     b2.setPos(1,5)
     b3.setPos(1,-3)
     
     updateRssi()
-    print rssi
-    print b1.triLat(b2,b3, 0)
+    
+    print "Beacon locations in the store: ", b1.location, b2.location, b3.location
+    print "Beacon Signal Strength to a specific user: ", b1.rssi[0], b2.rssi[0], b3.rssi[0]
+    print "User's Location: ",b1.triLat(b2,b3, 0)
+    print ""
+    print "Beacon Signal Strenth to another user: ", b1.rssi[1], b2.rssi[1], b3.rssi[1]
+    print "Second User's Location: ", b1.triLat(b2,b3, 1)
+    print ""
+    print "Beacon Signal Strength to a third user: ", b1.rssi[2], b2.rssi[2], b3.rssi[2]
+    print "Third User's Locations: ", b1.triLat(b2,b3, 2)
+    
+    
+    print ""
+    print ""
+    print ""
+    print ""
+    print ""
+    
+    
     
     
     
