@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Bestbuy</string>
+    <string name="button2">Help</string>
+    <string name="radiobutton4">Park Royal</string>
+    <string name="radiobutton5">Downtown</string>
+    <string name="radiobutton">Richmond</string>
+    <string name="button">Choose Location</string>
+</resources>
