@@ -119,11 +119,7 @@ def main():
     
     updateStore()
     updateStatus()
-    
-    print ""
-    print ""
-    print ""
-    
+
     print "Example values of where people can be in the store: ", store
     print "Example array showing if people are busy or not: ", status
     print "Some possible RSSI values: ", rssi
@@ -170,11 +166,6 @@ def main():
     
     
     print ""
-    print ""
-    print ""
-    print ""
-    print ""
-    
     
     
     
